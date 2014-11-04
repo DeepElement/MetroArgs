@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <metadata xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <id>MetroArgs</id>
+    <version>0.0.1</version>
+    <authors>Todd Morrison</authors>
+    <owners>Todd Morison</owners>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <iconUrl>http://www.deepelement.com/img/logos/de/de_logo.ico</iconUrl>
+    <description>Support for Build Variables in Universal Apps</description>
+    <tags>Metro ENV WinJS Javascript Compile MSBuild</tags>
+    <licenseUrl>https://raw.githubusercontent.com/DeepElement/MetroArgs/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/DeepElement/MetroArgs</projectUrl>
+    <copyright>Copyright 2014</copyright>
+  </metadata>
+</package>

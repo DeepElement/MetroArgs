@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ConfigFile>.config.json</ConfigFile>
+  </PropertyGroup>
+  <Target Name="CleanMetroArgs" BeforeTargets="BuildMetroArgs" >
+    <Delete Files="$(ConfigFile)" />
+  </Target>
+  <Target Name="BuildMetroArgs" AfterTargets="BeforeBuild">
+    <WriteLinesToFile  File="$(ConfigFile)" Lines="{" Overwrite="true" Encoding="utf-8" />
+    <WriteLinesToFile  File="$(ConfigFile)" Lines="&quot;Configuration&quot;:&quot;$(Configuration)&quot;" Overwrite="false" Encoding="utf-8" /> 
+    <WriteLinesToFile  File="$(ConfigFile)" Lines="}" Overwrite="false" Encoding="utf-8" /> 
+  </Target>
+</Project>
