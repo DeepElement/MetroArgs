@@ -16,6 +16,10 @@ Part of the [MetroNode](http://www.nuget.org/packages/MetroNode) toolset.
     });
 ```
 
+#Source Control
+The configuration file is generated at runtime and stored in a file called `.metroargs.json`. 
+Consider adding wildcard match `.*` to your exclusion file for Git/SVN/HG.
+
 
 #Additional Arguments
 Please contribute to the project by appending your desired MSBuild arguments to the packages build definition.
