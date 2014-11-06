@@ -50,7 +50,7 @@
     <MinimumVisualStudioVersion>12.0</MinimumVisualStudioVersion>
     <DefaultLanguage>en-US</DefaultLanguage>
     <PackageCertificateKeyFile>MetroArgs_Universal_TemporaryKey.pfx</PackageCertificateKeyFile>
-    <NuGetPackageImportStamp>225f238b</NuGetPackageImportStamp>
+    <NuGetPackageImportStamp>0b312a18</NuGetPackageImportStamp>
   </PropertyGroup>
   <ItemGroup>
     <AppxManifest Include="package.appxmanifest">
@@ -70,12 +70,12 @@
   </ItemGroup>
   <Import Project="..\MetroArgs_Universal.Shared\MetroArgs_Universal.Shared.projitems" Label="Shared" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\$(WMSJSProjectDirectory)\Microsoft.VisualStudio.$(WMSJSProject).targets" />
-  <Import Project="..\..\packages\MetroArgs.0.0.1\build\metroargs.targets" Condition="Exists('..\..\packages\MetroArgs.0.0.1\build\metroargs.targets')" />
+  <Import Project="..\..\packages\MetroArgs.0.1.0\build\metroargs.targets" Condition="Exists('..\..\packages\MetroArgs.0.1.0\build\metroargs.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\..\packages\MetroArgs.0.0.1\build\metroargs.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\MetroArgs.0.0.1\build\metroargs.targets'))" />
+    <Error Condition="!Exists('..\..\packages\MetroArgs.0.1.0\build\metroargs.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\MetroArgs.0.1.0\build\metroargs.targets'))" />
   </Target>
   <!-- To modify your build process, add your task inside one of the targets below then uncomment
        that target and the DisableFastUpToDateCheck PropertyGroup. 

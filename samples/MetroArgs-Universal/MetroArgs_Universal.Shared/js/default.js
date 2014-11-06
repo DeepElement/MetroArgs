@@ -28,5 +28,9 @@
         // args.setPromise().
     };
 
-    app.start();
+    WinJS.xhr({ url: ".metroargs.json" }).then(function (respObj) {
+        var parsedObject = JSON.parse(respObj.responseText);
+        // do something with object
+        app.start();
+    });
 })();
