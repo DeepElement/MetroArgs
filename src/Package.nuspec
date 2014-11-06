@@ -6,7 +6,7 @@
     <authors>Todd Morrison</authors>
     <owners>Todd Morison</owners>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
-    <iconUrl>http://www.deepelement.com/img/logos/de/de_logo.ico</iconUrl>
+    <iconUrl>http://www.metronode.org/img/logo/metronode-96x96.png</iconUrl>
     <description>Support for Build Variables in Universal Apps</description>
     <tags>Metro ENV WinJS Javascript Compile MSBuild</tags>
     <licenseUrl>https://raw.githubusercontent.com/DeepElement/MetroArgs/master/LICENSE</licenseUrl>
