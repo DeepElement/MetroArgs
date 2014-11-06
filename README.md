@@ -1,9 +1,22 @@
-MetroArgs
+![metronode](http://www.metronode.org/img/logo/metronode-96x96.png) MetroArgs
 ==================
 
-Support for Build Variables in Universal Apps
+Support for Build Variables in Universal Apps <br />
+Part of the [MetroNode](http://www.nuget.org/packages/MetroNode) toolset.
 
 ***
 
 #How to Setup
-Install the [MetroArgs](http://www.nuget.org/packages/MetroArgs) NuGet package to your project
+1. Install the [MetroArgs](http://www.nuget.org/packages/MetroArgs) NuGet package to your project
+2. Load up the configuration file in your JS:
+``` Javascript
+ WinJS.xhr({ url: ".metroargs.json" }).then(function (respObj) {
+        var parsedObject = JSON.parse(respObj.responseText);
+        console.log(parsedObject.Configuration);
+    });
+```
+
+
+#Additional Arguments
+Please contribute to the project by appending your desired MSBuild arguments to the packages build definition.
+The desired goal is to export all build-time arguments into an NConf Compatible configuration file for usage at runtime.
