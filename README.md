@@ -22,5 +22,11 @@ Consider adding wildcard match `.*` to your exclusion file for Git/SVN/HG.
 
 
 #Additional Arguments
-Please contribute to the project by appending your desired MSBuild arguments to the packages build definition.
-The desired goal is to export all build-time arguments into an NConf Compatible configuration file for usage at runtime.
+To Extend to export your own project's arguments, just add an `itemgroup` to your project's build file:
+
+``` 
+  <ItemGroup>
+    <MSBuildVariable Include="Configuration" />
+    <EnvironmentalVariable Include="OS" />
+  </ItemGroup>
+```

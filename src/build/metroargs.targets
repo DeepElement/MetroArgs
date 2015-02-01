@@ -2,7 +2,14 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <ConfigFile>.metroargs.json</ConfigFile>
+    <CurrentDate>$([System.DateTime]::UtcNow.ToString(&quot;o&quot;))</CurrentDate>
   </PropertyGroup>
+
+  <ItemGroup>
+    <MSBuildVariable Include="Configuration" />
+    <EnvironmentalVariable Include="OS" />
+  </ItemGroup>
+
   <Target Name="CleanMetroArgs" BeforeTargets="_PackageExtraFilesMetroArgs" >
     <Delete Files="$(ConfigFile)" />
   </Target>
@@ -21,9 +28,12 @@
 
   <Target Name="BuildMetroArgs" AfterTargets="BeforeBuild">
     <Message Text="MetroArgs-PostCompilation-Files: %(PackagingOutputs.Identity)  TargetPath:%(PackagingOutputs.TargetPath)"  Importance="high" />
+    <Message Text="%(MSBuildVariable.Identity)"/>
 
     <WriteLinesToFile  File="$(ConfigFile)" Lines="{" Overwrite="true" Encoding="utf-8" />
-    <WriteLinesToFile  File="$(ConfigFile)" Lines="&quot;Configuration&quot;:&quot;$(Configuration)&quot;" Overwrite="false" Encoding="utf-8" /> 
-    <WriteLinesToFile  File="$(ConfigFile)" Lines="}" Overwrite="false" Encoding="utf-8" /> 
+    <WriteLinesToFile  File="$(ConfigFile)" Lines="&quot;%(EnvironmentalVariable.Identity)&quot;:&quot;$(%(EnvironmentalVariable.Identity))&quot;," Overwrite="false" Encoding="utf-8" />
+    <WriteLinesToFile  File="$(ConfigFile)" Lines="&quot;%(MSBuildVariable.Identity)&quot;:&quot;$(%(MSBuildVariable.Identity))&quot;," Overwrite="false" Encoding="utf-8" />
+      <WriteLinesToFile  File="$(ConfigFile)" Lines="&quot;BuildTimeStamp&quot;:&quot;$(CurrentDate)&quot;" Overwrite="false" Encoding="utf-8" />
+    <WriteLinesToFile  File="$(ConfigFile)" Lines="}" Overwrite="false" Encoding="utf-8" />
   </Target>
 </Project>
